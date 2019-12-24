@@ -2,27 +2,47 @@ package kr.co.calculator.ui.main
 
 import android.view.View
 import android.widget.TextView
-import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import java.util.*
 import kotlin.collections.ArrayList
 
 class MainViewModel : ViewModel() {
-    var calculatorText: ObservableField<String> = ObservableField("")
-    var finalResult: ObservableField<String> = ObservableField("")
+//    var calculatorText: ObservableField<String> = ObservableField("")
+//    var finalResult: ObservableField<String> = ObservableField("")
+//    fun onAllClear() {
+//        calculatorText.set("")
+//        finalResult.set("")
+//    }
+//
+//    fun onButton(view: View) {
+//        if (view is TextView) {
+//            calculatorText.set(calculatorText.get() + view.text)
+//        }
+//
+//        finalResult.set(calculating(postFixExpression()).toString())
+
+    var calculatorText = ""
 
     fun onAllClear() {
-        calculatorText.set("")
-        finalResult.set("")
+        calculatorText = ""
     }
 
-    fun onButton(view: View) {
+//    fun onButton(view: View) {
+//        if (view is TextView) {
+//            calculatorText = calculatorText + view.text
+//        }
+//
+//        finalResult = calculating(postFixExpression()).toString()
+//    }
+
+    fun onButton(view: View): Int {
         if (view is TextView) {
-            calculatorText.set(calculatorText.get() + view.text)
+            calculatorText = calculatorText + view.text
         }
 
-        finalResult.set(calculating(postFixExpression()).toString())
+        return calculating(postFixExpression())
     }
+
 
     fun calculating(cals: ArrayList<String>): Int {
         val calStack: Stack<Int> = Stack()
@@ -74,7 +94,8 @@ class MainViewModel : ViewModel() {
     }
 
     fun postFixExpression(): ArrayList<String> {
-        val text = calculatorText.get().toString()
+//        val text = calculatorText.get().toString()
+        val text = calculatorText
         val cal: Stack<Char> = Stack()
         val ret: ArrayList<String> = ArrayList()
 

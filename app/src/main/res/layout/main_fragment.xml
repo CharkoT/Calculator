@@ -1,253 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
 
-    <data>
+    <TextView
+        android:id="@+id/brifing_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/equal"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <variable
-            name="viewmodel"
-            type="kr.co.calculator.ui.main.MainViewModel" />
+    <TextView
+        android:id="@+id/equal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="="
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/brifing_tv"
+        app:layout_constraintRight_toLeftOf="@+id/calculator"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </data>
+    <TextView
+        android:id="@+id/calculator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/equal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.main.MainFragment">
+    <Button
+        android:id="@+id/all_clean_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="AC"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/number9"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brifing_tv" />
 
-        <TextView
-            android:id="@+id/brifing_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="@{viewmodel.calculatorText}"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_weight="3"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/equal"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/number7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="7"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/number8"
+        app:layout_constraintTop_toBottomOf="@+id/all_clean_btn" />
 
-        <TextView
-            android:id="@+id/equal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="="
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintLeft_toRightOf="@+id/brifing_tv"
-            app:layout_constraintRight_toLeftOf="@+id/calculator"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/number8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="8"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number7"
+        app:layout_constraintRight_toLeftOf="@+id/number9"
+        app:layout_constraintTop_toBottomOf="@+id/all_clean_btn" />
 
-        <TextView
-            android:id="@+id/calculator"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:text="@{viewmodel.finalResult}"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_weight="2"
-            app:layout_constraintLeft_toRightOf="@+id/equal"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/number9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number8"
+        app:layout_constraintRight_toLeftOf="@+id/cal_plus"
+        app:layout_constraintTop_toBottomOf="@+id/all_clean_btn" />
 
-        <Button
-            android:id="@+id/all_clean_btn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:onClick="@{() -> viewmodel.onAllClear()}"
-            android:text="AC"
-            android:textSize="24sp"
-            app:layout_constraintLeft_toLeftOf="@+id/number9"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/brifing_tv" />
+    <Button
+        android:id="@+id/cal_plus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="+"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number9"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/all_clean_btn" />
 
-        <Button
-            android:id="@+id/number7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="7"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/number8"
-            app:layout_constraintTop_toBottomOf="@+id/all_clean_btn" />
+    <Button
+        android:id="@+id/number4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="4"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/number5"
+        app:layout_constraintTop_toBottomOf="@+id/number7" />
 
-        <Button
-            android:id="@+id/number8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="8"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number7"
-            app:layout_constraintRight_toLeftOf="@+id/number9"
-            app:layout_constraintTop_toBottomOf="@+id/all_clean_btn" />
+    <Button
+        android:id="@+id/number5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number4"
+        app:layout_constraintRight_toLeftOf="@+id/number6"
+        app:layout_constraintTop_toBottomOf="@+id/number8" />
 
-        <Button
-            android:id="@+id/number9"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="9"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number8"
-            app:layout_constraintRight_toLeftOf="@+id/cal_plus"
-            app:layout_constraintTop_toBottomOf="@+id/all_clean_btn" />
+    <Button
+        android:id="@+id/number6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="6"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number5"
+        app:layout_constraintRight_toLeftOf="@+id/cal_minus"
+        app:layout_constraintTop_toBottomOf="@+id/number9" />
 
-        <Button
-            android:id="@+id/cal_plus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="+"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number9"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/all_clean_btn" />
+    <Button
+        android:id="@+id/cal_minus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="-"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cal_plus" />
 
-        <Button
-            android:id="@+id/number4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="4"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/number5"
-            app:layout_constraintTop_toBottomOf="@+id/number7" />
+    <Button
+        android:id="@+id/number1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="1"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/number2"
+        app:layout_constraintTop_toBottomOf="@+id/number5" />
 
-        <Button
-            android:id="@+id/number5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="5"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number4"
-            app:layout_constraintRight_toLeftOf="@+id/number6"
-            app:layout_constraintTop_toBottomOf="@+id/number8" />
+    <Button
+        android:id="@+id/number2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number1"
+        app:layout_constraintRight_toLeftOf="@+id/number3"
+        app:layout_constraintTop_toBottomOf="@+id/number5" />
 
-        <Button
-            android:id="@+id/number6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="6"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number5"
-            app:layout_constraintRight_toLeftOf="@+id/cal_minus"
-            app:layout_constraintTop_toBottomOf="@+id/number9" />
+    <Button
+        android:id="@+id/number3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number2"
+        app:layout_constraintRight_toLeftOf="@+id/cal_multi"
+        app:layout_constraintTop_toBottomOf="@+id/number6" />
 
-        <Button
-            android:id="@+id/cal_minus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="-"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number6"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cal_plus" />
+    <Button
+        android:id="@+id/cal_multi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="*"
+        android:textSize="24sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toRightOf="@+id/number3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cal_minus" />
 
-        <Button
-            android:id="@+id/number1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="1"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/number2"
-            app:layout_constraintTop_toBottomOf="@+id/number5" />
+    <Button
+        android:id="@+id/number0"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/number3"
+        app:layout_constraintTop_toBottomOf="@+id/number1" />
 
-        <Button
-            android:id="@+id/number2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="2"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number1"
-            app:layout_constraintRight_toLeftOf="@+id/number3"
-            app:layout_constraintTop_toBottomOf="@+id/number5" />
+    <Button
+        android:id="@+id/cal_division"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:text="/"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@+id/cal_multi"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cal_multi" />
 
-        <Button
-            android:id="@+id/number3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="3"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number2"
-            app:layout_constraintRight_toLeftOf="@+id/cal_multi"
-            app:layout_constraintTop_toBottomOf="@+id/number6" />
-
-        <Button
-            android:id="@+id/cal_multi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="*"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintLeft_toRightOf="@+id/number3"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cal_minus" />
-
-        <Button
-            android:id="@+id/number0"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="0"
-            android:textSize="24sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="@+id/number3"
-            app:layout_constraintTop_toBottomOf="@+id/number1" />
-
-        <Button
-            android:id="@+id/cal_division"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:onClick="@{(view) -> viewmodel.onButton(view)}"
-            android:text="/"
-            android:textSize="24sp"
-            app:layout_constraintLeft_toLeftOf="@+id/cal_multi"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cal_multi" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>
